@@ -58,21 +58,6 @@ public class BankingExecutor extends ActivityExecutor {
                 return Config.getLoopReturn();
             }
 
-//            // Withdraw all needed material in 1 loop
-//            List<Material> neededMaterials = BankHelper.getNeededMaterials();
-//            if (!neededMaterials.isEmpty()) {
-//                for (Material neededMaterial : neededMaterials) {
-//                    Store.setTask("Withdrawing " + neededMaterial.getName());
-//                    if (!ExBank.contains(neededMaterial.getBankPred())) {
-//                        Log.severe("Can't find " + neededMaterial.getName() + "! Stopping...");
-//                        Config.setStopping(true);
-//                        return Config.getLoopReturn();
-//                    }
-//
-//                    ExBank.withdraw(neededMaterial.getBankPred(), neededMaterial.getCurrentAmountNeeded());
-//                }
-//            }
-
             Store.setTask("Closing bank");
             Bank.close();
             return Config.getLoopReturn();

@@ -1,7 +1,5 @@
 package data;
 
-import java.util.Arrays;
-
 public enum Food {
     JUG_OF_WINE("Jug of wine"),
     CAKE("Cake", "2/3 cake", "Slice of cake");

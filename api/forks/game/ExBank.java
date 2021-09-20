@@ -40,13 +40,6 @@ public class ExBank {
 
         Bank.withdrawAmount(item.id(), amount);
         return true;
-
-//        Bank.withdrawAmount(item.id(), Bank.Amount.X);
-//        boolean opened = Time.sleepUntil(Chat::pendingInput, 3000);
-//        if (!opened) {
-//            return false;
-//        }
-//        return Chat.sendInput(amount);
     }
 
     public static long getCount(Predicate<Item> pred) {

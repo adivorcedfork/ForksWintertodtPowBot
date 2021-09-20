@@ -23,6 +23,13 @@ public class WintertodtExecutor extends ActivityExecutor {
     private final int MIN_BRAZIER_DIST = 2;
     private WintertodtActivity localActivity = WintertodtActivity.STARTING;
 
+    enum WintertodtActivity {
+        STARTING,
+        FEEDING,
+        CHOPPING,
+        FLETCHING
+    }
+
     @Override
     public int execute() {
         Log.info("Energy: " + WintertodtHelper.getEnergy()
@@ -189,11 +196,6 @@ public class WintertodtExecutor extends ActivityExecutor {
 
                     ExInventory.getFirst(Preds.BRUMA_ROOT).interact(a -> true);
                     sleepWhile(false);
-//                    if (Time.sleepUntil(() -> Players.local().animation() > 0, 1500)) {
-//
-//                    } else {
-//                        Log.info("Failed to start fletching");
-//                    }
                     return Config.getLoopReturn();
                 }
 
@@ -290,12 +292,5 @@ public class WintertodtExecutor extends ActivityExecutor {
             return false;
         }
         return brazier.actions().contains("Light") || brazier.actions().contains("Fix");
-    }
-
-    enum WintertodtActivity {
-        STARTING,
-        FEEDING,
-        CHOPPING,
-        FLETCHING
     }
 }
